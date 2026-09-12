@@ -16,16 +16,16 @@
 
 ### Aşama 1.1 — Ortamı Hazırla
 
-* \[ ] WSL Ubuntu'nu bu proje için temiz bir başlangıç noktası olarak kabul et (ya da isteğe bağlı: ücretsiz bir cloud VM — AWS/Oracle Cloud free tier — kullan, gerçek bir "sunucu" hissi verir)
-* \[ ] Bir GitHub reposu oluştur: `hardened-linux-server`
-* \[ ] İçine bir `README.md` taslağı aç (en sonda dolduracaksın)
+* \[x] WSL Ubuntu'nu bu proje için temiz bir başlangıç noktası olarak kabul et (ya da isteğe bağlı: ücretsiz bir cloud VM — AWS/Oracle Cloud free tier — kullan, gerçek bir "sunucu" hissi verir)
+* \[x] Bir GitHub reposu oluştur: `hardened-linux-server`
+* \[x] İçine bir `README.md` taslağı aç (en sonda dolduracaksın)
 
 ### Aşama 1.2 — SSH Sertleştirme
 
-* \[ ] `PasswordAuthentication no` yap (sadece key-based giriş)
-* \[ ] Root ile doğrudan SSH girişini kapat (`PermitRootLogin no`)
-* \[ ] SSH portunu değiştir (isteğe bağlı ama pratik için iyi: 22 yerine örn. 2222)
-* \[ ] `sshd\\\_config` değişikliklerini bir dosyada belgeleyip repoya ekle
+* \[x] `PasswordAuthentication no` yap (sadece key-based giriş)
+* \[x] Root ile doğrudan SSH girişini kapat (`PermitRootLogin no`)
+* \[x] SSH portunu değiştir (isteğe bağlı ama pratik için iyi: 22 yerine örn. 2222)
+* \[x] `sshd\\\_config` değişikliklerini bir dosyada belgeleyip repoya ekle
 
 ### Aşama 1.3 — Fail2ban Kurulumu
 
