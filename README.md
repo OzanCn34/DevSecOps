@@ -29,15 +29,15 @@
 
 ### Aşama 1.3 — Fail2ban Kurulumu
 
-* \[ ] `fail2ban` kur, SSH için etkinleştir
-* \[ ] Kendi kendine birkaç kez yanlış şifreyle bağlanmaya çalışıp (bu iş için tekrar `PasswordAuthentication yes` yapman gerekebilir test amaçlı, sonra tekrar kapat) IP'nin gerçekten banlandığını gözlemle
-* \[ ] `fail2ban-client status sshd` ile banlanan IP'leri gör
+* \[x] `fail2ban` kur, SSH için etkinleştir
+* \[x] Kendi kendine birkaç kez yanlış şifreyle bağlanmaya çalışıp (bu iş için tekrar `PasswordAuthentication yes` yapman gerekebilir test amaçlı, sonra tekrar kapat) IP'nin gerçekten banlandığını gözlemle
+* \[x] `fail2ban-client status sshd` ile banlanan IP'leri gör
 
 ### Aşama 1.4 — Nginx + TLS
 
-* \[ ] Nginx'te basit bir statik sayfa yayınla (zaten yapmıştın, bunu koru)
-* \[ ] Gerçek bir domain adın yoksa, **self-signed sertifika** ile HTTPS kur (`openssl` ile) — gerçek Let's Encrypt için bir domain gerekir, o yüzden bu adımda kavramı öğrenmek yeterli
-* \[ ] HTTP'den HTTPS'e otomatik yönlendirme kuralı ekle
+* \[x] Nginx'te basit bir statik sayfa yayınla (zaten yapmıştın, bunu koru)
+* \[x] Gerçek bir domain adın yoksa, **self-signed sertifika** ile HTTPS kur (`openssl` ile) — gerçek Let's Encrypt için bir domain gerekir, o yüzden bu adımda kavramı öğrenmek yeterli
+* \[x] HTTP'den HTTPS'e otomatik yönlendirme kuralı ekle
 
 ### Aşama 1.5 — UFW/iptables Son Hali
 
