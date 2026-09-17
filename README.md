@@ -46,10 +46,10 @@
 
 ### Aşama 1.6 — Health-Check + Alerting Script'i
 
-* \[ ] Kendi yazdığın bir bash script'i: nginx çalışıyor mu (`systemctl is-active`), disk doluluğu (`df`), açık portlar (`ss`) kontrol etsin
-* \[ ] Bir sorun bulursa bunu bir log dosyasına **belirgin şekilde** işaretlesin (örn. `\\\[ALARM]` etiketiyle)
-* \[ ] Bu script'i `cron` ile her 15 dakikada bir çalıştır
-* \[ ] Script'i bilerek bozup (örn. nginx'i durdurup) alarmın gerçekten tetiklendiğini kanıtla
+* \[x] Kendi yazdığın bir bash script'i: nginx çalışıyor mu (`systemctl is-active`), disk doluluğu (`df`), açık portlar (`ss`) kontrol etsin
+* \[x] Bir sorun bulursa bunu bir log dosyasına **belirgin şekilde** işaretlesin (örn. `\\\[ALARM]` etiketiyle)
+* \[x] Bu script'i `cron` ile her 15 dakikada bir çalıştır
+* \[x] Script'i bilerek bozup (örn. nginx'i durdurup) alarmın gerçekten tetiklendiğini kanıtla
 
 ### Aşama 1.7 — Merkezi Log İnceleme
 
