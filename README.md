@@ -53,12 +53,12 @@
 
 ### Aşama 1.7 — Merkezi Log İnceleme
 
-* \[ ] `journalctl`, nginx logları ve fail2ban loglarını tek bir yerden inceleyebileceğin basit bir script veya en azından bir "nereye bakılır" rehberi yaz
+* \[x] `journalctl`, nginx logları ve fail2ban loglarını tek bir yerden inceleyebileceğin basit bir script veya en azından bir "nereye bakılır" rehberi yaz
 
 ### Aşama 1.8 — Belgeleme (En Kritik Adım)
 
-* \[ ] README'yi doldur: neden her adımı attığını, hangi tehdide karşı olduğunu anlat (örnek: "Fail2ban ekledim çünkü SSH brute-force saldırıları en yaygın ilk saldırı vektörlerinden biri")
-* \[ ] Ekran görüntüleri/terminal çıktıları ekle (öncesi/sonrası — örneğin fail2ban'ın bir IP'yi banladığı an)
+* \[X] README'yi doldur: neden her adımı attığını, hangi tehdide karşı olduğunu anlat (örnek: "Fail2ban ekledim çünkü SSH brute-force saldırıları en yaygın ilk saldırı vektörlerinden biri")
+* \[x] Ekran görüntüleri/terminal çıktıları ekle (öncesi/sonrası — örneğin fail2ban'ın bir IP'yi banladığı an)
 
 ### ✅ Proje 1 Bitti Kontrolü
 
