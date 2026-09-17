@@ -41,8 +41,8 @@
 
 ### Aşama 1.5 — UFW/iptables Son Hali
 
-* \[ ] Firewall kurallarını gözden geçir: sadece gerekli portlar açık olsun (yeni SSH portu, 80, 443)
-* \[ ] `iptables -L -n -v` ile son durumu kaydet, repoya ekle
+* \[*] Firewall kurallarını gözden geçir: sadece gerekli portlar açık olsun (yeni SSH portu, 80, 443)
+* \[*] `iptables -L -n -v` ile son durumu kaydet, repoya ekle
 
 ### Aşama 1.6 — Health-Check + Alerting Script'i
 
