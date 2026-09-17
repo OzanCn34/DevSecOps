@@ -16,57 +16,57 @@
 
 ### Aşama 1.1 — Ortamı Hazırla
 
-* \[x] WSL Ubuntu'nu bu proje için temiz bir başlangıç noktası olarak kabul et (ya da isteğe bağlı: ücretsiz bir cloud VM — AWS/Oracle Cloud free tier — kullan, gerçek bir "sunucu" hissi verir)
-* \[x] Bir GitHub reposu oluştur: `hardened-linux-server`
-* \[x] İçine bir `README.md` taslağı aç (en sonda dolduracaksın)
+* ✅ WSL Ubuntu'nu bu proje için temiz bir başlangıç noktası olarak kabul et (ya da isteğe bağlı: ücretsiz bir cloud VM — AWS/Oracle Cloud free tier — kullan, gerçek bir "sunucu" hissi verir)
+* ✅ Bir GitHub reposu oluştur: `hardened-linux-server`
+* ✅ İçine bir `README.md` taslağı aç (en sonda dolduracaksın)
 
 ### Aşama 1.2 — SSH Sertleştirme
 
-* \[x] `PasswordAuthentication no` yap (sadece key-based giriş)
-* \[x] Root ile doğrudan SSH girişini kapat (`PermitRootLogin no`)
-* \[x] SSH portunu değiştir (isteğe bağlı ama pratik için iyi: 22 yerine örn. 2222)
-* \[x] `sshd\\\_config` değişikliklerini bir dosyada belgeleyip repoya ekle
+* ✅ `PasswordAuthentication no` yap (sadece key-based giriş)
+* ✅ Root ile doğrudan SSH girişini kapat (`PermitRootLogin no`)
+* ✅ SSH portunu değiştir (isteğe bağlı ama pratik için iyi: 22 yerine örn. 2222)
+* ✅ `sshd\\\_config` değişikliklerini bir dosyada belgeleyip repoya ekle
 
 ### Aşama 1.3 — Fail2ban Kurulumu
 
-* \[x] `fail2ban` kur, SSH için etkinleştir
-* \[x] Kendi kendine birkaç kez yanlış şifreyle bağlanmaya çalışıp (bu iş için tekrar `PasswordAuthentication yes` yapman gerekebilir test amaçlı, sonra tekrar kapat) IP'nin gerçekten banlandığını gözlemle
-* \[x] `fail2ban-client status sshd` ile banlanan IP'leri gör
+* ✅ `fail2ban` kur, SSH için etkinleştir
+* ✅ Kendi kendine birkaç kez yanlış şifreyle bağlanmaya çalışıp (bu iş için tekrar `PasswordAuthentication yes` yapman gerekebilir test amaçlı, sonra tekrar kapat) IP'nin gerçekten banlandığını gözlemle
+* ✅ `fail2ban-client status sshd` ile banlanan IP'leri gör
 
 ### Aşama 1.4 — Nginx + TLS
 
-* \[x] Nginx'te basit bir statik sayfa yayınla (zaten yapmıştın, bunu koru)
-* \[x] Gerçek bir domain adın yoksa, **self-signed sertifika** ile HTTPS kur (`openssl` ile) — gerçek Let's Encrypt için bir domain gerekir, o yüzden bu adımda kavramı öğrenmek yeterli
-* \[x] HTTP'den HTTPS'e otomatik yönlendirme kuralı ekle
+* ✅ Nginx'te basit bir statik sayfa yayınla (zaten yapmıştın, bunu koru)
+* ✅ Gerçek bir domain adın yoksa, **self-signed sertifika** ile HTTPS kur (`openssl` ile) — gerçek Let's Encrypt için bir domain gerekir, o yüzden bu adımda kavramı öğrenmek yeterli
+* ✅ HTTP'den HTTPS'e otomatik yönlendirme kuralı ekle
 
 ### Aşama 1.5 — UFW/iptables Son Hali
 
-* \[*] Firewall kurallarını gözden geçir: sadece gerekli portlar açık olsun (yeni SSH portu, 80, 443)
-* \[*] `iptables -L -n -v` ile son durumu kaydet, repoya ekle
+* ✅ Firewall kurallarını gözden geçir: sadece gerekli portlar açık olsun (yeni SSH portu, 80, 443)
+* ✅ `iptables -L -n -v` ile son durumu kaydet, repoya ekle
 
 ### Aşama 1.6 — Health-Check + Alerting Script'i
 
-* \[x] Kendi yazdığın bir bash script'i: nginx çalışıyor mu (`systemctl is-active`), disk doluluğu (`df`), açık portlar (`ss`) kontrol etsin
-* \[x] Bir sorun bulursa bunu bir log dosyasına **belirgin şekilde** işaretlesin (örn. `\\\[ALARM]` etiketiyle)
-* \[x] Bu script'i `cron` ile her 15 dakikada bir çalıştır
-* \[x] Script'i bilerek bozup (örn. nginx'i durdurup) alarmın gerçekten tetiklendiğini kanıtla
+* ✅ Kendi yazdığın bir bash script'i: nginx çalışıyor mu (`systemctl is-active`), disk doluluğu (`df`), açık portlar (`ss`) kontrol etsin
+* ✅ Bir sorun bulursa bunu bir log dosyasına **belirgin şekilde** işaretlesin (örn. `\\\[ALARM]` etiketiyle)
+* ✅ Bu script'i `cron` ile her 15 dakikada bir çalıştır
+* ✅ Script'i bilerek bozup (örn. nginx'i durdurup) alarmın gerçekten tetiklendiğini kanıtla
 
 ### Aşama 1.7 — Merkezi Log İnceleme
 
-* \[x] `journalctl`, nginx logları ve fail2ban loglarını tek bir yerden inceleyebileceğin basit bir script veya en azından bir "nereye bakılır" rehberi yaz
+* ✅ `journalctl`, nginx logları ve fail2ban loglarını tek bir yerden inceleyebileceğin basit bir script veya en azından bir "nereye bakılır" rehberi yaz
 
 ### Aşama 1.8 — Belgeleme (En Kritik Adım)
 
-* \[X] README'yi doldur: neden her adımı attığını, hangi tehdide karşı olduğunu anlat (örnek: "Fail2ban ekledim çünkü SSH brute-force saldırıları en yaygın ilk saldırı vektörlerinden biri")
-* \[x] Ekran görüntüleri/terminal çıktıları ekle (öncesi/sonrası — örneğin fail2ban'ın bir IP'yi banladığı an)
+* ✅ README'yi doldur: neden her adımı attığını, hangi tehdide karşı olduğunu anlat (örnek: "Fail2ban ekledim çünkü SSH brute-force saldırıları en yaygın ilk saldırı vektörlerinden biri")
+* ✅ Ekran görüntüleri/terminal çıktıları ekle (öncesi/sonrası — örneğin fail2ban'ın bir IP'yi banladığı an)
 
 ### ✅ Proje 1 Bitti Kontrolü
 
-* \[ ] SSH sadece key ile giriyor, root kapalı
-* \[ ] Fail2ban gerçekten bir saldırıyı engellediğini kanıtladın (ekran görüntüsü var)
-* \[ ] Nginx HTTPS ile çalışıyor
-* \[ ] Health-check script'i cron ile otonom çalışıyor ve gerçek bir arızayı yakaladığını gösterdin
-* \[ ] README, bir yabancının okuyup anlayabileceği kalitede
+* ✅ SSH sadece key ile giriyor, root kapalı
+* ✅ Fail2ban gerçekten bir saldırıyı engellediğini kanıtladın (ekran görüntüsü var)
+* ✅ Nginx HTTPS ile çalışıyor
+* ✅ Health-check script'i cron ile otonom çalışıyor ve gerçek bir arızayı yakaladığını gösterdin
+* ✅ README, bir yabancının okuyup anlayabileceği kalitede
 
 \---
 
