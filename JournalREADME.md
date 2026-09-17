@@ -1,4 +1,4 @@
-# Journal
+# Proje 01 - Journal
 
 **1.1 - 1.2** 
 
